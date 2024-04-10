@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+
+{% block title %}All todos{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 main">
+                <button class="btn btn-primary
+                "><a href="add/" >Add task</a></button>
+                <ul class="list-group mt-3">
+                    {% for todo in todos %}
+                    <li class="list-group-item {% if todo.completed %}completed{% endif %}">
+                        {{ todo.title }}
+                        <div class="float-right">
+                            <a href="edit/{{ todo.id }}" class="btn btn-sm btn-info mr-2">Edit</a>
+                            <a href="delete/{{ todo.id }}" class="btn btn-sm btn-danger">Delete</a>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
