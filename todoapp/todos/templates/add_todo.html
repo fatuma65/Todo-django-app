@@ -1,24 +1,28 @@
-{% extends 'index.html' %}
+{% extends 'base.html' %}
 
 {% block title %}
     Add Task
 {% endblock %}
 
 {% block content %}
+    <h3 class="title">Todo App</h3>
+
     <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <form method="post" class="mt-3 form-survey">
                     {% csrf_token %}
                     <div class="form-group">
-                        {{ form.title.label_tag }}
+                        <label for="id_title">Title</label>
                         {{ form.title }}
                     </div>
                     <div class="form-check">
-                        {{ form.completed }}
-                        <label class="form-check-label" for="id_completed">Completed</label>
+                        <label class="form-check-label" for="id_completed">
+                            {{ form.completed }}
+                            Completed
+                        </label>
                     </div>
-                    <button type="submit" class="btn btn-primary mt-3">Add Todo</button>
+                    <button class="btn btn-primary mt-3 task">Add Todo</button>
                 </form>
             </div>
         </div>

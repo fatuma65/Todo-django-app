@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %} login {% endblock %}
+
+{% block content %}
+    <div class="form-login">
+        <h2>Login</h2>
+        <form method="post" class="login-form">
+            {% csrf_token %}
+            <!-- {{ form.as_p }} -->
+            <div>
+                <!-- <label for="username">{{ form.username }}</label> -->
+                <input type="text" id="username" name="username" placeholder="Username">
+            </div>
+            <div>
+                <!-- <label for="username">{{ form.password }}</label> -->
+                <input type="text" id="password" name="password" placeholder="Password">
+            </div>
+            <button class="btn btn-primary">Login</button>
+        </form>
+    </div>
+
+{% endblock %}
