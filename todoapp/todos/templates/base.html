@@ -1,17 +1,22 @@
 {% load static %}
+{% load bootstrap5 %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'global.css' %}">
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-    <h1 class="title">Todo App</h1>
     {% block content %}
-
+    <nav>
+        <a href="login/">Login</a>
+        <a href="register/">Register</a>
+    </nav>
+    <h1 class="manage">Experience a fresh way <br> to manage your tasks</h1>
+    <img src="{% static 'media/original-task shot.png' %}" alt="phone-task image">
     {% endblock %}
 </body>
 </html>
